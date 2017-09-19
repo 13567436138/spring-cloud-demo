@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 *2017年9月19日
 *
 */
-@FeignClient
+@FeignClient("test-client")
 public interface TestFeignClient {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
     String test();
