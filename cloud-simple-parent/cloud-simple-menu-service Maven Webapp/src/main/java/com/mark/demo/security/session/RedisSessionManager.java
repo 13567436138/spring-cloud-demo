@@ -8,7 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.mark.demo.security.filter.SessionFilter;
-import com.mark.demo.security.service.RedisFeignService;
+import com.mark.demo.security.service.CommonRedisFeignService;
 import com.mark.demo.security.utils.CookieUtils;
 
 public class RedisSessionManager
@@ -17,10 +17,10 @@ public class RedisSessionManager
     
     private static final Integer defaultExpireSeconds = 60 * 30;                                           // 30分钟
     
-    private RedisFeignService redisFeignService;
+    private CommonRedisFeignService redisFeignService;
     
     
-    public void setRedisFeignService(RedisFeignService redisFeignService) {
+    public void setRedisFeignService(CommonRedisFeignService redisFeignService) {
 		this.redisFeignService = redisFeignService;
 	}
 

@@ -13,7 +13,7 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.parsing.XNode;
 import org.apache.ibatis.parsing.XPathParser;
 
-import com.mark.demo.security.service.RedisFeignService;
+import com.mark.demo.security.service.CommonRedisFeignService;
 import com.mark.demo.security.utils.PropertiesLoader;
 import com.mark.demo.security.utils.SpringUtils;
 
@@ -27,11 +27,11 @@ public class RedisCachingManagerImpl implements RedisCachingManager{
 	
 	private volatile static RedisCachingManagerImpl enhancedCacheManager;
 	
-	private static RedisFeignService redisFeignService;
+	private static CommonRedisFeignService redisFeignService;
 	
-	public static RedisFeignService getRedisFeignService() {
+	public static CommonRedisFeignService getRedisFeignService() {
 		 if(redisFeignService==null){
-			 redisFeignService=SpringUtils.getBean(RedisFeignService.class);
+			 redisFeignService=SpringUtils.getBean(CommonRedisFeignService.class);
 		 }
 		 return redisFeignService;
 	}

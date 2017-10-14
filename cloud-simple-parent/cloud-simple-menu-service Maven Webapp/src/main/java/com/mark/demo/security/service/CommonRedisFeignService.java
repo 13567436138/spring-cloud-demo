@@ -14,11 +14,11 @@ import com.mark.demo.security.entity.Menu;
 *2017年10月14日
 *
 */
-@FeignClient(name="redisFeignService",url="http://localhost:8083")
-@RequestMapping("/redis")
-public interface RedisFeignService {
+@FeignClient(name="commonRedisFeignService",url="http://localhost:8083")
+@RequestMapping("/redis/common")
+public interface CommonRedisFeignService {
 	@RequestMapping("/setObject")
-	void setObject(@RequestParam("key")String key,@RequestParam("value") Object value,@RequestParam("cacheSeconds") Integer cacheSeconds);
+	void setObject(@RequestParam("key")String key,@RequestBody Object value,@RequestParam("cacheSeconds") Integer cacheSeconds);
 	@RequestMapping("/del")
 	void del(String key);
 	@RequestMapping("/getObject")
@@ -27,8 +27,7 @@ public interface RedisFeignService {
 	boolean expire(@RequestParam("key")String key,@RequestParam("expireSeconds") int expireSeconds);
 	@RequestMapping("/getMapLen")
 	int getMapLen(String key);
-	@RequestMapping("/setMapField/menu")
-	boolean setMapFieldMenu(@RequestParam("key")String key,@RequestParam("field")String field,@RequestBody List<Menu> value);
+	
 	@RequestMapping("/getMapFiled")
 	Object getMapFiled(@RequestParam("key")String key,@RequestParam("field")String field);
 	@RequestMapping("/removeMapField")

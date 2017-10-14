@@ -4,7 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.mark.demo.security.service.RedisFeignService;
+import com.mark.demo.security.service.CommonRedisFeignService;
 import com.mark.demo.security.session.RedisSessionManager;
 import com.mark.demo.security.utils.SpringUtils;
 
@@ -25,7 +25,7 @@ public class UtilConfig {
 	}
 	
 	@Bean
-	public RedisSessionManager redisSessionManager(RedisFeignService redisFeignService){
+	public RedisSessionManager redisSessionManager(CommonRedisFeignService redisFeignService){
 		RedisSessionManager manager=new RedisSessionManager();
 		manager.setRedisFeignService(redisFeignService);
 		return manager;

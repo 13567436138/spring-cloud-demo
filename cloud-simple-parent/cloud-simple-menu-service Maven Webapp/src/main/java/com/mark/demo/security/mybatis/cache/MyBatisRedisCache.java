@@ -9,7 +9,8 @@ import org.apache.ibatis.cache.Cache;
 import org.apache.ibatis.cache.CacheKey;
 
 import com.mark.demo.security.entity.Menu;
-import com.mark.demo.security.service.RedisFeignService;
+import com.mark.demo.security.service.CommonRedisFeignService;
+import com.mark.demo.security.service.MenuRedisFeignService;
 import com.mark.demo.security.utils.SpringUtils;
 
 /*
@@ -24,13 +25,22 @@ public class MyBatisRedisCache implements Cache,Serializable{
 
 	private String id;
 	
-	private RedisFeignService redisFeignService;
+	private CommonRedisFeignService commonRedisFeignService;
 	
-	public RedisFeignService getRedisFeignService() {
-		if(redisFeignService==null){
-			redisFeignService=SpringUtils.getBean(RedisFeignService.class);
+	private MenuRedisFeignService menuRedisFeignService;
+	
+	public CommonRedisFeignService getCommonRedisFeignService() {
+		if(commonRedisFeignService==null){
+			commonRedisFeignService=SpringUtils.getBean(CommonRedisFeignService.class);
 		}
-		return redisFeignService;
+		return commonRedisFeignService;
+	}
+
+	public MenuRedisFeignService getMenuRedisFeignService() {
+		if(menuRedisFeignService==null){
+			menuRedisFeignService=SpringUtils.getBean(MenuRedisFeignService.class);
+		}
+		return menuRedisFeignService;
 	}
 
 	public MyBatisRedisCache(final String id) {
@@ -48,7 +58,7 @@ public class MyBatisRedisCache implements Cache,Serializable{
 	@Override
 	public int getSize() {
 		
-	    return getRedisFeignService().getMapLen(mybatis_cache_prefix);
+	    return getCommonRedisFeignService().getMapLen(mybatis_cache_prefix);
 	}
 
 	@Override
@@ -58,7 +68,7 @@ public class MyBatisRedisCache implements Cache,Serializable{
 		String myKey=keyAry[2];
 		if(value instanceof List){
 			if(myKey.indexOf("MenuMapper")!=-1){
-				getRedisFeignService().setMapFieldMenu(mybatis_cache_prefix+myKey, cacheKey.toString(),(List<Menu>)value);
+				getMenuRedisFeignService().setMapFieldMenu(mybatis_cache_prefix+myKey, cacheKey.toString(),(List<Menu>)value);
 			}
 		}
 	}
@@ -67,7 +77,7 @@ public class MyBatisRedisCache implements Cache,Serializable{
 		CacheKey cacheKey=(CacheKey)key;
 		String [] keyAry=cacheKey.toString().split(":");
 		String myKey=keyAry[2];
-	    return getRedisFeignService().getMapFiled(mybatis_cache_prefix+myKey, cacheKey.toString());
+	    return getCommonRedisFeignService().getMapFiled(mybatis_cache_prefix+myKey, cacheKey.toString());
 	    
 	}
 
@@ -76,14 +86,14 @@ public class MyBatisRedisCache implements Cache,Serializable{
 		CacheKey cacheKey=(CacheKey)key;
 		String [] keyAry=cacheKey.toString().split(":");
 		String myKey=keyAry[2];
-	    Object ret=getRedisFeignService().getMapFiled(mybatis_cache_prefix+myKey, cacheKey.toString());
-	    getRedisFeignService().removeMapField(mybatis_cache_prefix+myKey,cacheKey.toString());
+	    Object ret=getCommonRedisFeignService().getMapFiled(mybatis_cache_prefix+myKey, cacheKey.toString());
+	    getCommonRedisFeignService().removeMapField(mybatis_cache_prefix+myKey,cacheKey.toString());
 		return ret;
 	}
 
 	@Override
 	public void clear() {
-		getRedisFeignService().del(mybatis_cache_prefix);
+		getCommonRedisFeignService().del(mybatis_cache_prefix);
 	}
 
 	@Override

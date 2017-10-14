@@ -1,7 +1,5 @@
 package com.mark.demo.security.controller;
 
-import java.util.ArrayList;
-
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,12 +13,13 @@ import com.mark.demo.security.utils.JedisUtils;
 *
 */
 @RestController
-@RequestMapping("/redis")
-public class RedisController {
+@RequestMapping("/redis/common")
+public class CommonRedisController {
 	@RequestMapping("/setObject")
-	public void setObject(String key, Object value, Integer cacheSeconds){
+	public void setObject(String key,@RequestBody Object value, Integer cacheSeconds){
 		JedisUtils.setObject(key, value, cacheSeconds);
 	}
+	
 	
 	@RequestMapping("/del")
 	public void del(String key){
@@ -40,11 +39,6 @@ public class RedisController {
 	@RequestMapping("/getMapLen")
 	public int getMapLen(String key){
 		return JedisUtils.getMapLen(key);
-	}
-	
-	@RequestMapping("/setMapField/menu")
-	public boolean setMapField(String key,String field,@RequestBody ArrayList<Menu> value){
-		return JedisUtils.setMapField(key, field, value);
 	}
 	
 	@RequestMapping("/getMapFiled")
