@@ -1,9 +1,12 @@
 package com.mark.demo.security.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.ArrayList;
+
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mark.demo.security.entity.Menu;
 import com.mark.demo.security.utils.JedisUtils;
 
 /*
@@ -39,8 +42,8 @@ public class RedisController {
 		return JedisUtils.getMapLen(key);
 	}
 	
-	@RequestMapping("/setMapField")
-	public boolean setMapField(String key,String field,Object value){
+	@RequestMapping("/setMapField/menu")
+	public boolean setMapField(String key,String field,@RequestBody ArrayList<Menu> value){
 		return JedisUtils.setMapField(key, field, value);
 	}
 	

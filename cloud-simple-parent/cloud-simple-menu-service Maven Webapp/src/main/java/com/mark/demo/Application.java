@@ -22,7 +22,7 @@ import com.mark.demo.security.anno.MyBatisDao;
 @ServletComponentScan
 @MapperScan(value="com.mark.demo.security.mapper",annotationClass=MyBatisDao.class)
 @EnableDiscoveryClient
-@EnableFeignClients
+@EnableFeignClients(basePackages={"com.mark.demo.security.service"})
 public class Application {
 
 	public static void main(String[] args) {
