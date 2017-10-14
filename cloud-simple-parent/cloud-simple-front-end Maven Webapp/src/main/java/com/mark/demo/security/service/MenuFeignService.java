@@ -17,7 +17,7 @@ import com.mark.demo.security.entity.Menu;
 */
 @FeignClient("menuService")
 @RequestMapping("/menu")
-public interface MenuService {
+public interface MenuFeignService {
 	@RequestMapping("/getMenuTopLever")
 	List<Menu> getMenuTopLever();
 	@RequestMapping("/getMenuChildren")

@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.mark.demo.security.service.UserService;
+import com.mark.demo.security.service.UserFeignService;
 
 /*
 *hxp(hxpwangyi@126.com)
@@ -15,7 +15,7 @@ import com.mark.demo.security.service.UserService;
 @RequestMapping("/user")
 public class UserController {
 	@Autowired
-	private UserService userService;
+	private UserFeignService userService;
 	
 	
 }

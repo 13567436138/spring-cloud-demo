@@ -16,6 +16,17 @@ public class User extends GenericEntity{
 	private int age;
 	private int sex;
 	private boolean rememberMe;
+	private List<Role> roleList;
+	
+	
+
+	public List<Role> getRoleList() {
+		return roleList;
+	}
+
+	public void setRoleList(List<Role> roleList) {
+		this.roleList = roleList;
+	}
 
 	public String getUserName() {
 		return userName;

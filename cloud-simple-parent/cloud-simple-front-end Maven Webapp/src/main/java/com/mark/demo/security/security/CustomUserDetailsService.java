@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 
 import com.mark.demo.security.entity.Role;
 import com.mark.demo.security.entity.User;
-import com.mark.demo.security.mapper.UserMapper;
+import com.mark.demo.security.service.UserFeignService;
 
 /*
 *hxp(hxpwangyi@126.com)
@@ -25,11 +25,11 @@ import com.mark.demo.security.mapper.UserMapper;
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
 	@Autowired
-	private UserMapper userMapper;
+	private UserFeignService userService;
 	@Override
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
 
-        User user = userMapper.getUserByUserName(userName);
+        User user = userService.getUserByUserName(userName);
         if(null == user) {    
              throw new UsernameNotFoundException("用户" + userName + "不存在");    
         }         

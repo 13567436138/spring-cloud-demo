@@ -16,7 +16,7 @@ import org.springframework.security.web.access.intercept.FilterInvocationSecurit
 import org.springframework.stereotype.Service;
 
 import com.mark.demo.security.entity.Resource;
-import com.mark.demo.security.service.ResourceService;
+import com.mark.demo.security.service.ResourceFeignService;
 
 /*
 *hxp(hxpwangyi@126.com)
@@ -26,7 +26,7 @@ import com.mark.demo.security.service.ResourceService;
 @Service("customFilterInvocationSecurityMetadataSource") 
 public class CustomFilterInvocationSecurityMetadataSource implements FilterInvocationSecurityMetadataSource {
 	@Autowired
-	private ResourceService resourceService;
+	private ResourceFeignService resourceService;
 	private static HashMap<String, Collection<ConfigAttribute>> resourceMap = null;   
  
     @PostConstruct        

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.mark.demo.security.base.PaginateResult;
 import com.mark.demo.security.base.Pagination;
 import com.mark.demo.security.entity.Menu;
-import com.mark.demo.security.service.MenuService;
+import com.mark.demo.security.service.MenuFeignService;
 
 /*
 *hxp(hxpwangyi@126.com)
@@ -24,7 +24,7 @@ import com.mark.demo.security.service.MenuService;
 public class MenuController {
 	
 	@Autowired
-	private MenuService menuService;
+	private MenuFeignService menuService;
 	
 	@RequestMapping("/getMenuTopLever")
 	@ResponseBody
@@ -51,7 +51,7 @@ public class MenuController {
 	
 	@RequestMapping("/list/data")
 	@ResponseBody
-	public PaginateResult<Menu> listData(Menu menu,Pagination pagination,HttpServletRequest request){
-		return menuService.findPage(pagination, menu);
+	public PaginateResult<Menu> listData(Menu menu,Pagination pagination){
+		return menuService.listData(menu,pagination);
 	}
 }

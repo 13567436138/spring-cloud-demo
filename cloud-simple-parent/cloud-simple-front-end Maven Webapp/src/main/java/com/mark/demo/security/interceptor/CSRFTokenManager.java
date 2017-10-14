@@ -50,7 +50,7 @@ public final class CSRFTokenManager
      */
     public void removeTokenForRequest(HttpServletRequest request)
     {
-        RedisSessionManager.remove(request, RedisSessionManager.SessionKey.CSRF_KEY);
+    	redisSessionManager.remove(request, RedisSessionManager.SessionKey.CSRF_KEY);
     }
     
     /**
