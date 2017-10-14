@@ -219,7 +219,7 @@
 	</pluginManagement>
 </build>	
 	
-<repositories>
+<!-- <repositories>
     <repository>
         <id>spring-snapshots</id>
         <name>Spring Snapshots</name>
@@ -262,5 +262,5 @@
             <enabled>false</enabled>
         </snapshots>
     </pluginRepository>
-</pluginRepositories>
+</pluginRepositories> -->
 </project>

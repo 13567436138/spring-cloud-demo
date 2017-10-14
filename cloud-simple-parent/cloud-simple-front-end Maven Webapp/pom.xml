@@ -1,21 +1,106 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.mark.demo</groupId>
+  <parent>
+  	 <groupId>com.mark.demo</groupId>
+ 	 <artifactId>cloud-simple-parent</artifactId>
+  	<version>0.0.1-SNAPSHOT</version>
+  </parent>
   <artifactId>cloud-simple-front-end</artifactId>
   <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
   <name>cloud-simple-front-end Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  <properties>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  	<resource.delimiter>$</resource.delimiter>
+  </properties>
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
+    	<dependency>
+  			<groupId>com.mark.demo</groupId>
+  			<version>0.0.1-SNAPSHOT</version>
+  			<artifactId>cloud-simple-menu-api</artifactId>
+  		</dependency>
+  		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+  		<dependency>     
+	        <groupId>org.springframework.boot</groupId>    
+	        <artifactId>spring-boot-starter-freemarker</artifactId>  
+	    </dependency>
+  		<dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
+        </dependency>
+        <dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-lang3</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.httpcomponents</groupId>
+		    <artifactId>httpclient</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>com.google.code.kaptcha</groupId>
+		    <artifactId>kaptcha</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>com.google.guava</groupId>
+		    <artifactId>guava</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>com.alibaba</groupId>
+		    <artifactId>fastjson</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>commons-fileupload</groupId>
+		    <artifactId>commons-fileupload</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>commons-io</groupId>
+		    <artifactId>commons-io</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.jsoup</groupId>
+		    <artifactId>jsoup</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>commons-validator</groupId>
+		    <artifactId>commons-validator</artifactId>
+		</dependency>
+		<!-- Servlet -->  
+	    <dependency>  
+	        <groupId>javax.servlet</groupId>  
+	        <artifactId>javax.servlet-api</artifactId> 
+	    </dependency>  
+	    <dependency>  
+	        <groupId>javax.servlet.jsp</groupId>  
+	        <artifactId>jsp-api</artifactId>  
+	    </dependency>  
+	    <dependency>  
+	        <groupId>javax.servlet</groupId>  
+	        <artifactId>jstl</artifactId>  
+	    </dependency>
   </dependencies>
   <build>
     <finalName>cloud-simple-front-end</finalName>
+    <plugins>
+	    <plugin>  
+            <groupId>org.apache.maven.plugins</groupId>  
+            <artifactId>maven-compiler-plugin</artifactId>  
+        </plugin>
+        <plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-surefire-plugin</artifactId>
+		</plugin>
+    </plugins>
   </build>
 </project>
