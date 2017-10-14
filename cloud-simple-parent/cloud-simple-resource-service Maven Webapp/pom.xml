@@ -6,15 +6,15 @@
  	 <artifactId>cloud-simple-parent</artifactId>
   	<version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>cloud-simple-user-service</artifactId>
+  <artifactId>cloud-simple-resource-service</artifactId>
   <packaging>war</packaging>
-  <name>cloud-simple-user-service Maven Webapp</name>
+  <name>cloud-simple-resource-service Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
-  	<dependency>
+   <dependency>
   		<groupId>com.mark.demo</groupId>
   		<version>0.0.1-SNAPSHOT</version>
-  		<artifactId>cloud-simple-user-api</artifactId>
+  		<artifactId>cloud-simple-resource-api</artifactId>
   	</dependency>
     <dependency>
   		<groupId>org.springframework.boot</groupId>  
@@ -100,7 +100,7 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>cloud-simple-user-service</finalName>
+    <finalName>cloud-simple-resource-service</finalName>
     <plugins>
 	    <plugin>  
             <groupId>org.apache.maven.plugins</groupId>  

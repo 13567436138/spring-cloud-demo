@@ -8,9 +8,9 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 import org.apache.ibatis.cache.Cache;
 import org.apache.ibatis.cache.CacheKey;
 
-import com.mark.demo.security.entity.Menu;
+import com.mark.demo.security.entity.User;
 import com.mark.demo.security.service.CommonRedisFeignService;
-import com.mark.demo.security.service.MenuRedisFeignService;
+import com.mark.demo.security.service.UserRedisFeignService;
 import com.mark.demo.security.utils.SpringUtils;
 
 /*
@@ -27,7 +27,7 @@ public class MyBatisRedisCache implements Cache,Serializable{
 	
 	private CommonRedisFeignService commonRedisFeignService;
 	
-	private MenuRedisFeignService menuRedisFeignService;
+	private UserRedisFeignService userRedisFeignService;
 	
 	public CommonRedisFeignService getCommonRedisFeignService() {
 		if(commonRedisFeignService==null){
@@ -36,11 +36,11 @@ public class MyBatisRedisCache implements Cache,Serializable{
 		return commonRedisFeignService;
 	}
 
-	public MenuRedisFeignService getMenuRedisFeignService() {
-		if(menuRedisFeignService==null){
-			menuRedisFeignService=SpringUtils.getBean(MenuRedisFeignService.class);
+	public UserRedisFeignService getMenuRedisFeignService() {
+		if(userRedisFeignService==null){
+			userRedisFeignService=SpringUtils.getBean(UserRedisFeignService.class);
 		}
-		return menuRedisFeignService;
+		return userRedisFeignService;
 	}
 
 	public MyBatisRedisCache(final String id) {

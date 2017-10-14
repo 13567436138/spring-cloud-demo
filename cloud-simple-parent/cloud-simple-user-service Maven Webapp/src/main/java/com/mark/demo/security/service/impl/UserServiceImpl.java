@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mark.demo.security.base.GenericServiceImpl;
-import com.mark.demo.security.entity.Menu;
 import com.mark.demo.security.entity.User;
 import com.mark.demo.security.mapper.UserMapper;
 import com.mark.demo.security.service.UserService;
