@@ -14,8 +14,8 @@ import com.mark.demo.security.entity.User;
 *2017年10月14日
 *
 */
-@FeignClient(name="menuRedisFeignService",url="http://localhost:8083")
-@RequestMapping("/redis/user")
+@FeignClient(name="redisService")
+@RequestMapping("/service/redis/user")
 public interface UserRedisFeignService {
 	@RequestMapping("/setMapField/list")
 	boolean setMapFieldMenu(@RequestParam("key")String key,@RequestParam("field")String field,@RequestBody List<User> value);

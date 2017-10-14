@@ -21,7 +21,7 @@ public abstract class GenericEntity implements Serializable {
      * 分页对象
      * <p>用于动态加入SQL分页语句的对象</p>
      */
-    protected Pagination pagination;
+   // protected Pagination pagination;
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -47,7 +47,7 @@ public abstract class GenericEntity implements Serializable {
     }
 
 
-	public Pagination getPagination() {
+	/*public Pagination getPagination() {
 		return pagination;
 	}
 
@@ -55,6 +55,6 @@ public abstract class GenericEntity implements Serializable {
 	public void setPagination(Pagination pagination) {
 		this.pagination = pagination;
 	}
-
+*/
    
 }

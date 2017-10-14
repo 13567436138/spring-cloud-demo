@@ -30,6 +30,11 @@ public class UserServiceImpl extends GenericServiceImpl<User> implements UserSer
 	public List<User> findAll() {
 		return userMapper.selectAll();
 	}
+
+	@Override
+	public User getUserByUserName(String userName) {
+		return userMapper.getUserByUserName(userName);
+	}
 	
 
 }

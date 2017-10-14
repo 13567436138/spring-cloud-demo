@@ -9,5 +9,5 @@ import com.mark.demo.security.entity.User;
 *
 */
 public interface UserService extends GenericService<User>{
-	
+	User getUserByUserName(String userName);
 }

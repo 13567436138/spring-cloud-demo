@@ -13,7 +13,7 @@ import com.mark.demo.security.utils.JedisUtils;
 *
 */
 @RestController
-@RequestMapping("/redis/common")
+@RequestMapping("/service/redis/common")
 public class CommonRedisController {
 	@RequestMapping("/setObject")
 	public void setObject(String key,@RequestBody Object value, Integer cacheSeconds){

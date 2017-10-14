@@ -15,7 +15,7 @@ import com.mark.demo.security.utils.JedisUtils;
 *
 */
 @RestController
-@RequestMapping("/redis/menu")
+@RequestMapping("/service/redis/menu")
 public class MenuRedisController {
 	
 	

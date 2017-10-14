@@ -13,7 +13,7 @@ import com.mark.demo.security.entity.Resource;
 *
 */
 @FeignClient("resourceService")
-@RequestMapping("/resource")
+@RequestMapping("/service/resource")
 public interface ResourceFeignService {
 	@RequestMapping("/findAll")
 	List<Resource> findAll();

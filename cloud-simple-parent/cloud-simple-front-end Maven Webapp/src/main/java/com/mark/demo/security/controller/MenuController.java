@@ -52,6 +52,6 @@ public class MenuController {
 	@RequestMapping("/list/data")
 	@ResponseBody
 	public PaginateResult<Menu> listData(Menu menu,Pagination pagination){
-		return menuService.listData(menu,pagination);
+		return menuService.listData(menu,pagination.getPageSize(),pagination.getCurrentPage());
 	}
 }

@@ -15,7 +15,7 @@ import com.mark.demo.security.utils.JedisUtils;
 *
 */
 @RestController
-@RequestMapping("/redis/user")
+@RequestMapping("/service/redis/user")
 public class UserRedisController {
 	@RequestMapping("/setMapField/list")
 	public boolean setMapField(String key,String field,@RequestBody ArrayList<User> value){

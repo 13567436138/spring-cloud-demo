@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.mark.demo.security.base.PaginateResult;
 import com.mark.demo.security.base.Pagination;
@@ -16,7 +17,7 @@ import com.mark.demo.security.entity.Menu;
 *
 */
 @FeignClient("menuService")
-@RequestMapping("/menu")
+@RequestMapping("/service/menu")
 public interface MenuFeignService {
 	@RequestMapping("/getMenuTopLever")
 	List<Menu> getMenuTopLever();
@@ -25,5 +26,5 @@ public interface MenuFeignService {
 	@RequestMapping("/updateMenu")
 	boolean updateMenu(Menu menu);
 	@RequestMapping("/list/data")
-	PaginateResult<Menu> listData(@RequestBody Menu menu,@RequestBody Pagination pagination);
+	PaginateResult<Menu> listData(@RequestBody Menu menu,@RequestParam("pageSize")int pageSize,@RequestParam("currentPage")int currentPage);
 }	

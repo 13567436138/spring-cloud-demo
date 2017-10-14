@@ -20,7 +20,7 @@ import com.mark.demo.security.service.MenuService;
 *
 */
 @RestController
-@RequestMapping("/menu")
+@RequestMapping("/service/menu")
 public class MenuController {
 	
 	@Autowired
@@ -41,8 +41,11 @@ public class MenuController {
 		return menuService.updateMenu(menu);
 	}
 	
-	@RequestMapping("/list/data")
-	public PaginateResult<Menu> listData(@RequestBody Menu menu,@RequestBody Pagination pagination){
+	@RequestMapping("/list/data/")
+	public PaginateResult<Menu> listData(@RequestBody Menu menu,int pageSize,int currentPage){
+		Pagination pagination=new Pagination();
+		pagination.setPageSize(pageSize);
+		pagination.setCurrentPage(currentPage);
 		return menuService.findPage(pagination, menu);
 	}
 }
