@@ -55,6 +55,17 @@ public class RedisSessionManager
         return false;
     }
     
+    public boolean putString(HttpServletRequest request, SessionKey key, String value, int expireSecond)
+    {
+        String realKey = getRealKey(request, key);
+        if (StringUtils.isNotBlank(realKey))
+        {
+        	redisFeignService.setString(realKey, value, expireSecond);
+            return true;
+        }
+        return false;
+    }
+    
     /**
      * 清除session中的指定值
      * @param request
@@ -103,7 +114,11 @@ public class RedisSessionManager
     
     public String getString(HttpServletRequest request, SessionKey key)
     {
-        return (String) getObject(request, key);
+    	String realKey = getRealKey(request, key);
+        if (StringUtils.isNotBlank(realKey)) { 
+        	return redisFeignService.getString(realKey);
+        }
+        return null;
     }
     
     /**

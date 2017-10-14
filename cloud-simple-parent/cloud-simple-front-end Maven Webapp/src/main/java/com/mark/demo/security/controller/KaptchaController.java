@@ -44,7 +44,7 @@ public class KaptchaController
         response.setContentType("image/jpeg");
         String captext = producer.createText();
         redisSessionManager.remove(request, RedisSessionManager.SessionKey.CAPTCHA);
-        redisSessionManager.put(request, RedisSessionManager.SessionKey.CAPTCHA, captext, timeOut);
+        redisSessionManager.putString(request, RedisSessionManager.SessionKey.CAPTCHA, captext, timeOut);
         BufferedImage bi = producer.createImage(captext);
         ServletOutputStream out = response.getOutputStream();
         ImageIO.write(bi, "jpg", out);

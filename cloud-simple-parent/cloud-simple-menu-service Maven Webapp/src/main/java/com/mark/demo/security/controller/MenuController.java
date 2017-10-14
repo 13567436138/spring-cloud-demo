@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mark.demo.security.base.PaginateResult;
@@ -41,7 +42,7 @@ public class MenuController {
 		return menuService.updateMenu(menu);
 	}
 	
-	@RequestMapping("/list/data/")
+	@RequestMapping(value="/list/data",method=RequestMethod.POST,consumes="application/json")
 	public PaginateResult<Menu> listData(@RequestBody Menu menu,int pageSize,int currentPage){
 		Pagination pagination=new Pagination();
 		pagination.setPageSize(pageSize);
