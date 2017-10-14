@@ -1,3 +1,5 @@
 /cloud-simple-parent/cloud-simple-config Maven Webapp/target
 /cloud-simple-parent/cloud-simple-eureka Maven Webapp/target
 /cloud-simple-parent/cloud-simple-feign Maven Webapp/target
+/cloud-simple-parent/cloud-simple-front-end Maven Webapp/target
+/cloud-simple-parent/cloud-simple-user-service Maven Webapp/target
