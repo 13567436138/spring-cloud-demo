@@ -12,9 +12,11 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.parsing.XNode;
 import org.apache.ibatis.parsing.XPathParser;
+import org.springframework.data.redis.connection.jedis.JedisUtils;
 
-import com.mark.demo.security.utils.JedisUtils;
+import com.mark.demo.security.service.RedisFeignService;
 import com.mark.demo.security.utils.PropertiesLoader;
+import com.mark.demo.security.utils.SpringUtils;
 
 public class RedisCachingManagerImpl implements RedisCachingManager{
 	
@@ -25,6 +27,8 @@ public class RedisCachingManagerImpl implements RedisCachingManager{
 	private boolean cacheEnabled = false;
 	
 	private volatile static RedisCachingManagerImpl enhancedCacheManager;
+	
+	private static RedisFeignService redisFeignService;
 
 	private RedisCachingManagerImpl(){}
 	public static RedisCachingManagerImpl getInstance()
@@ -33,6 +37,7 @@ public class RedisCachingManagerImpl implements RedisCachingManager{
 			synchronized (RedisCachingManagerImpl.class) {
 				if(enhancedCacheManager==null){
 					enhancedCacheManager=new RedisCachingManagerImpl();
+					redisFeignService=SpringUtils.getBean("redisFeignService");
 				}
 			}
 		}
@@ -45,7 +50,7 @@ public class RedisCachingManagerImpl implements RedisCachingManager{
 			Set<String> relatedStatements = observers.get(observable);
 			for(String statementId:relatedStatements)
 			{
-				JedisUtils.del(MyBatisRedisCache.mybatis_cache_prefix+statementId);
+				redisFeignService.del(MyBatisRedisCache.mybatis_cache_prefix+statementId);
 			}
 		}
 	}

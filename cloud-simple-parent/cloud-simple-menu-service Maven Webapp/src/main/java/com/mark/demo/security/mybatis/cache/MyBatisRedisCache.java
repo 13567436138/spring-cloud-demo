@@ -7,8 +7,8 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 import org.apache.ibatis.cache.Cache;
 import org.apache.ibatis.cache.CacheKey;
 
-import com.mark.demo.security.utils.JedisUtils;
-import com.mark.demo.security.utils.ObjectUtils;
+import com.mark.demo.security.service.RedisFeignService;
+import com.mark.demo.security.utils.SpringUtils;
 
 /*
 *hxp(hxpwangyi@126.com)
@@ -21,12 +21,15 @@ public class MyBatisRedisCache implements Cache,Serializable{
 	private final ReadWriteLock readWriteLock = new ReentrantReadWriteLock();
 
 	private String id;
+	
+	private RedisFeignService redisFeignService;
 
 	public MyBatisRedisCache(final String id) {
 	    if (id == null) {
 	        throw new IllegalArgumentException("缓存没有初始化id");
 	    }
 	    this.id = id;
+	    redisFeignService=SpringUtils.getBean("redisFeignService");
 	}
 
 	@Override
@@ -37,7 +40,7 @@ public class MyBatisRedisCache implements Cache,Serializable{
 	@Override
 	public int getSize() {
 		
-	    return JedisUtils.getMapLen(mybatis_cache_prefix);
+	    return redisFeignService.getMapLen(mybatis_cache_prefix);
 	}
 
 	@Override
@@ -45,14 +48,14 @@ public class MyBatisRedisCache implements Cache,Serializable{
 		CacheKey cacheKey=(CacheKey)key;
 		String [] keyAry=cacheKey.toString().split(":");
 		String myKey=keyAry[2];
-	    JedisUtils.setMapField(mybatis_cache_prefix+myKey, cacheKey.toString(), value);
+		redisFeignService.setMapField(mybatis_cache_prefix+myKey, cacheKey.toString(), value);
 	}
 	@Override
 	public Object getObject(Object key) {
 		CacheKey cacheKey=(CacheKey)key;
 		String [] keyAry=cacheKey.toString().split(":");
 		String myKey=keyAry[2];
-	    return JedisUtils.getMapFiled(mybatis_cache_prefix+myKey, cacheKey.toString());
+	    return redisFeignService.getMapFiled(mybatis_cache_prefix+myKey, cacheKey.toString());
 	    
 	}
 
@@ -61,14 +64,14 @@ public class MyBatisRedisCache implements Cache,Serializable{
 		CacheKey cacheKey=(CacheKey)key;
 		String [] keyAry=cacheKey.toString().split(":");
 		String myKey=keyAry[2];
-	    Object ret=JedisUtils.getMapFiled(mybatis_cache_prefix+myKey, cacheKey.toString());
-		JedisUtils.removeMapField(mybatis_cache_prefix+myKey,cacheKey.toString());
+	    Object ret=redisFeignService.getMapFiled(mybatis_cache_prefix+myKey, cacheKey.toString());
+	    redisFeignService.removeMapField(mybatis_cache_prefix+myKey,cacheKey.toString());
 		return ret;
 	}
 
 	@Override
 	public void clear() {
-	    JedisUtils.del(mybatis_cache_prefix);
+		redisFeignService.del(mybatis_cache_prefix);
 	}
 
 	@Override

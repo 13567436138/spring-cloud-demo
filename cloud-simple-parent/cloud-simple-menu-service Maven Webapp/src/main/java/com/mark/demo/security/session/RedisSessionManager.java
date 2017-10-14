@@ -8,8 +8,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.mark.demo.security.filter.SessionFilter;
+import com.mark.demo.security.service.RedisFeignService;
 import com.mark.demo.security.utils.CookieUtils;
-import com.mark.demo.security.utils.JedisUtils;
 
 public class RedisSessionManager
 {
@@ -17,7 +17,14 @@ public class RedisSessionManager
     
     private static final Integer defaultExpireSeconds = 60 * 30;                                           // 30分钟
     
-    /**
+    private RedisFeignService redisFeignService;
+    
+    
+    public void setRedisFeignService(RedisFeignService redisFeignService) {
+		this.redisFeignService = redisFeignService;
+	}
+
+	/**
      * 将对象放入session缓存
      * @param request
      * @param key
@@ -42,7 +49,7 @@ public class RedisSessionManager
         String realKey = getRealKey(request, key);
         if (StringUtils.isNotBlank(realKey))
         {
-            JedisUtils.setObject(realKey, value, expireSecond);
+        	redisFeignService.setObject(realKey, value, expireSecond);
             return true;
         }
         return false;
@@ -54,12 +61,12 @@ public class RedisSessionManager
      * @param key
      * @return
      */
-    public static boolean remove(HttpServletRequest request, SessionKey key)
+    public  boolean remove(HttpServletRequest request, SessionKey key)
     {
         String realKey = getRealKey(request, key);
         if (StringUtils.isNotBlank(realKey))
         {
-            JedisUtils.del(realKey);
+        	redisFeignService.del(realKey);
             return true;
         }
         return false;
@@ -74,7 +81,9 @@ public class RedisSessionManager
     public Object getObject(HttpServletRequest request, SessionKey key)
     {
         String realKey = getRealKey(request, key);
-        if (StringUtils.isNotBlank(realKey)) { return JedisUtils.getObject(realKey); }
+        if (StringUtils.isNotBlank(realKey)) { 
+        	return redisFeignService.getObject(realKey);
+        }
         return null;
     }
     
@@ -88,7 +97,7 @@ public class RedisSessionManager
         String realKey = getRealKey(request, key);
         if (StringUtils.isNotBlank(realKey))
         {
-            JedisUtils.expire(realKey, defaultExpireSeconds);
+        	redisFeignService.expire(realKey, defaultExpireSeconds);
         }
     }
     
@@ -114,7 +123,7 @@ public class RedisSessionManager
      * 清空指定session的所有缓存, 并清除随机生成的sessionID
      * @param request
      */
-    public static void clear(HttpServletRequest request, HttpServletResponse response)
+    public  void clear(HttpServletRequest request, HttpServletResponse response)
     {
         SessionKey[] keys = SessionKey.values();
         for (SessionKey key : keys)
