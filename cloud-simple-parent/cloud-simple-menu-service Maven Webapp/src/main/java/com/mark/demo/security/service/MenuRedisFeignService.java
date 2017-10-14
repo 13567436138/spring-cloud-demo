@@ -17,6 +17,6 @@ import com.mark.demo.security.entity.Menu;
 @FeignClient(name="menuRedisFeignService",url="http://localhost:8083")
 @RequestMapping("/redis/menu")
 public interface MenuRedisFeignService {
-	@RequestMapping("/setMapField")
+	@RequestMapping("/setMapField/list")
 	boolean setMapFieldMenu(@RequestParam("key")String key,@RequestParam("field")String field,@RequestBody List<Menu> value);
 }
