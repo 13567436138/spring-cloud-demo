@@ -24,6 +24,7 @@
   	<module>cloud-simple-front-end Maven Webapp</module>
   	<module>cloud-simple-user-service Maven Webapp</module>
   	<module>cloud-simple-redis-service Maven Webapp</module>
+  	<module>cloud-simple-user-api</module>
   </modules>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
