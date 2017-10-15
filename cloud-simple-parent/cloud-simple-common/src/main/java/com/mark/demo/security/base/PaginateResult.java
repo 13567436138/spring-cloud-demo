@@ -30,11 +30,11 @@ public class PaginateResult<T> implements Serializable
     
     private Long 				total;
     
-    private Map<String, Object> count;
+    //private Map<String, Object> count;
     
-    private Object              obj;
+    //private Object              obj;
     
-    public Object getObj()
+    /*public Object getObj()
     {
         return obj;
     }
@@ -52,7 +52,7 @@ public class PaginateResult<T> implements Serializable
     public void setCount(Map<String, Object> count)
     {
         this.count = count;
-    }
+    }*/
     
     public Pagination getPage()
     {

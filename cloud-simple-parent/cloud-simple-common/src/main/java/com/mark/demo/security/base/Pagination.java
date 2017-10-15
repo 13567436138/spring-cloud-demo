@@ -34,7 +34,7 @@ public class Pagination implements Serializable {
     private Integer totalPage;
 
     //排序对象
-    private List<Sort> sorts;
+    private List<Sort> mySorts;
     
     /**
      * 排序字段
@@ -115,12 +115,12 @@ public class Pagination implements Serializable {
      */
     public String getSortToString()
     {
-        if(CollectionUtils.isEmpty(sorts)){
+        if(CollectionUtils.isEmpty(mySorts)){
             return "";
         }
         StringBuffer sb = new StringBuffer();
         int i = 0;
-        for (Sort sort : sorts)
+        for (Sort sort : mySorts)
         {
             if(i == 0){
                 sb.append(sort.toString() + "," );
@@ -138,23 +138,23 @@ public class Pagination implements Serializable {
      * @return
      */
     public Sort getOneSort(){
-        if(CollectionUtils.isEmpty(sorts)){
+        if(CollectionUtils.isEmpty(mySorts)){
             return null;
         }
-        return sorts.get(0);
+        return mySorts.get(0);
     }
 
-    public void setSorts(Sort sort)
-    {
-        this.sorts = Lists.newArrayList(sort);
-    }
     
-    public void setSorts(List<Sort> sort)
-    {
-        this.sorts = sort;
-    }
 
-    public String getOrderBy()
+    public List<Sort> getMySorts() {
+		return mySorts;
+	}
+
+	public void setMySorts(List<Sort> mySorts) {
+		this.mySorts = mySorts;
+	}
+
+	public String getOrderBy()
     {
         return orderBy;
     }
