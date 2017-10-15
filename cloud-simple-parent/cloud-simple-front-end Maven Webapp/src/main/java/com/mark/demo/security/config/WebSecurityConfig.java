@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
+import org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
@@ -48,7 +49,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	private CustomAccessDecisionManager customAccessDecisionManager;
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		 http 
+		LoginUrlAuthenticationEntryPoint entryPoint=new LoginUrlAuthenticationEntryPoint("/common/login/submitlogin");
+		entryPoint.setUseForward(true);
+		 http
 		 	.addFilterBefore(customFilterSecurityInterceptor, FilterSecurityInterceptor.class)
 		 	.addFilterAt(customUsernamePasswordAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
 	        .authorizeRequests().accessDecisionManager(customAccessDecisionManager)  
@@ -73,11 +76,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	        .logoutSuccessUrl("/logout")
 	        .logoutSuccessHandler(customLogoutSuccessHandler)
 	        .permitAll()  
-	        .invalidateHttpSession(true)  
-	        .and()  
+	        .invalidateHttpSession(true)
+	        .and()
+	        .exceptionHandling()
+	        .authenticationEntryPoint(entryPoint)
+	        .and()
 	        .rememberMe()
 	        .tokenValiditySeconds(1209600)
-	        .and().sessionManagement()
+	        .and()
+	        .sessionManagement()
 	        .invalidSessionUrl("/common/login")
 	        .maximumSessions(1)
 	        .expiredUrl("/common/login?expire=true"); 
