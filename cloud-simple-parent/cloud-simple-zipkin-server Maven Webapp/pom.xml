@@ -24,6 +24,23 @@
             <groupId>io.zipkin.java</groupId>
             <artifactId>zipkin-autoconfigure-ui</artifactId>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.zipkin.java/zipkin-autoconfigure-storage-mysql -->
+		<dependency>
+		    <groupId>io.zipkin.java</groupId>
+		    <artifactId>zipkin-autoconfigure-storage-mysql</artifactId>
+		</dependency>
+        <dependency>
+		    <groupId>com.alibaba</groupId>
+		    <artifactId>druid</artifactId>
+		</dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
   </dependencies>
   <build>
     <finalName>cloud-simple-zipkin-server</finalName>
