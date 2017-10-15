@@ -6,3 +6,4 @@
 /cloud-simple-parent/cloud-simple-resource-api/target
 /cloud-simple-parent/cloud-simple-resource-service Maven Webapp/target
 /cloud-simple-parent/cloud-simple-common/target
+/cloud-simple-parent/cloud-simple-zuul Maven Webapp/target
