@@ -14,7 +14,7 @@ import com.mark.demo.security.entity.User;
 *2017年9月8日
 *
 */
-@FeignClient("userService")
+@FeignClient("${userService.name}")
 @RequestMapping("/service/user")
 public interface UserFeignService {
 	@RequestMapping("/getUserByUserName")

@@ -14,7 +14,7 @@ import com.mark.demo.security.entity.Resource;
 *2017年10月14日
 *
 */
-@FeignClient("redisService")
+@FeignClient("${redisService.name}")
 @RequestMapping("/service/redis/resource")
 public interface ResourceRedisFeignService {
 	@RequestMapping("/setMapField/list")

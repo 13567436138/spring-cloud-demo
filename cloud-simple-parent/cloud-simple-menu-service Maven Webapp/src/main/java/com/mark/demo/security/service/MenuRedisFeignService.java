@@ -14,7 +14,7 @@ import com.mark.demo.security.entity.Menu;
 *2017年10月14日
 *
 */
-@FeignClient(name="redisService")
+@FeignClient(name="${redisService.name}")
 @RequestMapping("/service/redis/menu")
 public interface MenuRedisFeignService {
 	@RequestMapping("/setMapField/list")

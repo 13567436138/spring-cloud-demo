@@ -12,7 +12,7 @@ import com.mark.demo.security.entity.Resource;
 *2017年9月22日
 *
 */
-@FeignClient("resourceService")
+@FeignClient("${resourceService.name}")
 @RequestMapping("/service/resource")
 public interface ResourceFeignService {
 	@RequestMapping("/findAll")

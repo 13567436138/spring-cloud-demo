@@ -2,6 +2,7 @@ package com.mark.demo.security.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +17,7 @@ import com.mark.demo.security.entity.Menu;
 *2017年9月7日
 *
 */
-@FeignClient("menuService")
+@FeignClient(name="${menuService.name}")
 @RequestMapping("/service/menu")
 public interface MenuFeignService {
 	@RequestMapping("/getMenuTopLever")

@@ -14,7 +14,7 @@ import com.mark.demo.security.entity.User;
 *2017年10月14日
 *
 */
-@FeignClient(name="redisService")
+@FeignClient(name="${redisService.name}")
 @RequestMapping("/service/redis/user")
 public interface UserRedisFeignService {
 	@RequestMapping("/setMapField/list")
