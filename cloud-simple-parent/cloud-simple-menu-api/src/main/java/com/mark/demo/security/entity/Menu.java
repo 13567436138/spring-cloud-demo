@@ -8,7 +8,8 @@ import com.mark.demo.security.base.GenericEntity;
 *
 */
 public class Menu extends GenericEntity{
-	//private Menu parent;
+	private static final long serialVersionUID = 5883055087866446980L;
+	private Menu parent;
 	private String menuName;
 	private String menuDesc;
 	private String link;
@@ -56,12 +57,12 @@ public class Menu extends GenericEntity{
 		this.link = link;
 	}
 
-	/*public Menu getParent() {
+	public Menu getParent() {
 		return parent;
 	}
 
 	public void setParent(Menu parent) {
 		this.parent = parent;
-	}*/
+	}
 
 }

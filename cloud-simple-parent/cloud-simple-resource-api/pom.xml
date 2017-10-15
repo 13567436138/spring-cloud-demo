@@ -18,6 +18,11 @@
   </properties>
 
   <dependencies>
+  	<dependency>
+  		<groupId>com.mark.demo</groupId>=
+  		<version>0.0.1-SNAPSHOT</version>
+  		<artifactId>cloud-simple-common</artifactId>
+  	</dependency>
     <dependency>
 	    <groupId>com.google.guava</groupId>
 	    <artifactId>guava</artifactId>

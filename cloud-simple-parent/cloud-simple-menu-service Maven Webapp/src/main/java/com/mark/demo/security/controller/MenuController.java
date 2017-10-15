@@ -42,8 +42,8 @@ public class MenuController {
 		return menuService.updateMenu(menu);
 	}
 	
-	@RequestMapping(value="/list/data",method=RequestMethod.POST,consumes="application/json")
-	public PaginateResult<Menu> listData(@RequestBody Menu menu,int pageSize,int currentPage){
+	@RequestMapping(value="/list/data",method=RequestMethod.POST)
+	public PaginateResult<Menu> listData(Menu menu,int pageSize,int currentPage){
 		Pagination pagination=new Pagination();
 		pagination.setPageSize(pageSize);
 		pagination.setCurrentPage(currentPage);

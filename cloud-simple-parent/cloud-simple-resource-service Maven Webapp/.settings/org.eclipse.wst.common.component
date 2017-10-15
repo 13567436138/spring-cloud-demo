@@ -7,6 +7,9 @@
         <dependent-module archiveName="cloud-simple-resource-api-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/cloud-simple-resource-api/cloud-simple-resource-api">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="cloud-simple-common-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/cloud-simple-common/cloud-simple-common">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="cloud-simple-resource-service"/>
         <property name="java-output-path" value="/cloud-simple-resource-service Maven Webapp/target/classes"/>
     </wb-module>

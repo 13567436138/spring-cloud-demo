@@ -2,14 +2,12 @@ package com.mark.demo.security.service;
 
 import java.util.List;
 
-import org.jsoup.Connection.Method;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.mark.demo.security.base.HtmlWrapper;
 import com.mark.demo.security.base.PaginateResult;
 import com.mark.demo.security.entity.Menu;
 
@@ -28,6 +26,6 @@ public interface MenuFeignService {
 	@RequestMapping("/updateMenu")
 	boolean updateMenu(@RequestBody Menu menu);
 	@RequestMapping(value="/list/data",method=RequestMethod.POST)
-	PaginateResult<Menu> listData(@RequestBody Menu menu,@RequestParam("pageSize")int pageSize,@RequestParam("currentPage")int currentPage);
+	PaginateResult<Menu> listData(@RequestParam("menu") Menu menu,@RequestParam("pageSize")int pageSize,@RequestParam("currentPage")int currentPage);
 	
 }	

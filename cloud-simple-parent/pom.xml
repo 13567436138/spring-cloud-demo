@@ -19,6 +19,7 @@
   	<module>cloud-simple-config Maven Webapp</module>
   	<module>cloud-simple-eureka Maven Webapp</module>
   	<module>cloud-simple-feign Maven Webapp</module>
+  	<module>cloud-simple-common</module>
   	<module>cloud-simple-menu-service Maven Webapp</module>
   	<module>cloud-simple-menu-api</module>
   	<module>cloud-simple-front-end Maven Webapp</module>
