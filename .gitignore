@@ -8,3 +8,4 @@
 /cloud-simple-parent/cloud-simple-common/target
 /cloud-simple-parent/cloud-simple-zuul Maven Webapp/target
 /cloud-simple-parent/cloud-simple-zipkin-server Maven Webapp/target
+/cloud-simple-parent/cloud-simple-hystrix-turbine Maven Webapp/target
