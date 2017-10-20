@@ -50,7 +50,7 @@ public class LoginController extends GenericController
     	}else{
     		model.addAttribute("msg","");
     	}
-        return "common/login";
+        return "common/login2";
     }
     
     

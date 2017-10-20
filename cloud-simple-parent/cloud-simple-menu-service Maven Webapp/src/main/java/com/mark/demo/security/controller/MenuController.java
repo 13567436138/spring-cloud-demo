@@ -28,7 +28,7 @@ public class MenuController {
 	private MenuService menuService;
 	
 	@RequestMapping("/getMenuTopLever")
-	public List<Menu> getMenuTopLever(){
+	public List<Menu> getMenuTopLever(){//throw new RuntimeException();
 		return  menuService.getMenuTopLever();
 	}
 	

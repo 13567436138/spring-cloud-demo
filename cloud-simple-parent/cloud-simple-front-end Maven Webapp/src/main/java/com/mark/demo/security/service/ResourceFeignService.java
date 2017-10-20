@@ -6,13 +6,15 @@ import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.mark.demo.security.entity.Resource;
+import com.mark.demo.security.service.hystrix.ResourceFeignFallBackFactory;
+import com.mark.demo.security.service.hystrix.ResourceFeignServiceHystrix;
 
 /*
 *hxp(hxpwangyi@126.com)
 *2017年9月22日
 *
 */
-@FeignClient("${resourceService.name}")
+@FeignClient(name="${resourceService.name}",fallbackFactory=ResourceFeignFallBackFactory.class)
 @RequestMapping("/service/resource")
 public interface ResourceFeignService {
 	@RequestMapping("/findAll")

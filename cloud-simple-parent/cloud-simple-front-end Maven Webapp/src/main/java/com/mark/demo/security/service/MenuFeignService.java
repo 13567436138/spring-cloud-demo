@@ -11,13 +11,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.mark.demo.security.base.PaginateResult;
 import com.mark.demo.security.entity.Menu;
+import com.mark.demo.security.service.hystrix.MenuFeignFallBackFactory;
+import com.mark.demo.security.service.hystrix.MenuFeignServiceHystrix;
 
 /*
 *hxp(hxpwangyi@126.com)
 *2017年9月7日
 *
 */
-@FeignClient(name="${menuService.name}")
+@FeignClient(name="${menuService.name}",fallbackFactory=MenuFeignFallBackFactory.class)
 @RequestMapping("/service/menu")
 public interface MenuFeignService {
 	@RequestMapping("/getMenuTopLever")

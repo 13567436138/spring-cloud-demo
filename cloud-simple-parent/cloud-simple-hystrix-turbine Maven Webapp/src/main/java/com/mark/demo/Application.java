@@ -8,7 +8,7 @@ import org.springframework.cloud.netflix.turbine.EnableTurbine;
 
 /*
 *hxp(hxpwangyi@126.com)
-*2017Äê10ÔÂ20ÈÕ
+*2017
 *
 */
 @SpringBootApplication
