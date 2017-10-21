@@ -14,7 +14,7 @@ import com.mark.demo.security.service.hystrix.ResourceFeignServiceHystrix;
 *2017年9月22日
 *
 */
-@FeignClient(name="${resourceService.name}",fallbackFactory=ResourceFeignFallBackFactory.class)
+@FeignClient(name="resource",url="http://localhost:9999/service/resource",fallbackFactory=ResourceFeignFallBackFactory.class)
 @RequestMapping("/service/resource")
 public interface ResourceFeignService {
 	@RequestMapping("/findAll")

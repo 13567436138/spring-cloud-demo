@@ -19,7 +19,7 @@ import com.mark.demo.security.service.hystrix.MenuFeignServiceHystrix;
 *2017年9月7日
 *
 */
-@FeignClient(name="${menuService.name}",fallbackFactory=MenuFeignFallBackFactory.class)
+@FeignClient(name="menu",url="http://localhost:9999/service/menu",fallbackFactory=MenuFeignFallBackFactory.class)
 @RequestMapping("/service/menu")
 public interface MenuFeignService {
 	@RequestMapping("/getMenuTopLever")

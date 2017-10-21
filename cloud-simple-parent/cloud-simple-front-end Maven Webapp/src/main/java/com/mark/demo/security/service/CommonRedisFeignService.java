@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 *2017年10月14日
 *
 */
-@FeignClient(name="redisService")
+@FeignClient(name="redis",url="http://localhost:9999/service/redis/common")
 @RequestMapping("/service/redis/common")
 public interface CommonRedisFeignService {
 	@RequestMapping("/setObject")
