@@ -21,3 +21,6 @@
 /cloud-docker-parent/cloud-docker-user-service/target
 /cloud-docker-parent/cloud-docker-zipkin-server/target
 /cloud-docker-parent/cloud-docker-zuul/target
+/cloud-docker-parent/cloud-docker-resource-api/target
+/cloud-docker-parent/cloud-docker-menu-api/target
+/cloud-docker-parent/cloud-docker-user-api/target

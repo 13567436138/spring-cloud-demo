@@ -32,6 +32,9 @@
   	<module>cloud-docker-user-service</module>
   	<module>cloud-docker-zipkin-server</module>
   	<module>cloud-docker-zuul</module>
+  	<module>cloud-docker-menu-api</module>
+  	<module>cloud-docker-resource-api</module>
+  	<module>cloud-docker-user-api</module>
   </modules>
   <dependencyManagement>
   	<dependencies>
