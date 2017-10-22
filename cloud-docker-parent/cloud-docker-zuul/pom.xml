@@ -7,10 +7,10 @@
   	<artifactId>cloud-docker-parent</artifactId>
   	<version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>cloud-docker-admin-server</artifactId>
+  <artifactId>cloud-docker-zuul</artifactId>
   <packaging>jar</packaging>
 
-  <name>cloud-docker-admin-server</name>
+  <name>cloud-docker-zuul</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -18,26 +18,11 @@
   </properties>
 
   <dependencies>
-  		<dependency>  
-            <groupId>org.springframework.boot</groupId>  
-            <artifactId>spring-boot-starter-security</artifactId>  
-        </dependency>  
-    	<dependency>
-		    <groupId>de.codecentric</groupId>
-		    <artifactId>spring-boot-admin-server-ui</artifactId>
-		</dependency>
-  	
-  		<dependency>
-		    <groupId>de.codecentric</groupId>
-		    <artifactId>spring-boot-admin-server</artifactId>
-		</dependency>
-		<dependency>
-		    <groupId>org.springframework.boot</groupId>
-		    <artifactId>spring-boot-starter-mail</artifactId>
-		</dependency>
+    
   </dependencies>
+  
   <build>
-  <finalName>cloud-docker-admin-server</finalName>
+  <finalName>cloud-docker-zuul</finalName>
     <plugins>
     	<plugin>
             <groupId>org.springframework.boot</groupId>

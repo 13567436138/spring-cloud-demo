@@ -11,3 +11,13 @@
 /cloud-simple-parent/cloud-simple-hystrix-turbine Maven Webapp/target
 /cloud-docker-parent/cloud-docker-front-end/target
 /cloud-docker-parent/cloud-docker-admin-server/target
+/cloud-docker-parent/cloud-docker-common/target
+/cloud-docker-parent/cloud-docker-config/target
+/cloud-docker-parent/cloud-docker-eureka/target
+/cloud-docker-parent/cloud-docker-hystrix-turbine/target
+/cloud-docker-parent/cloud-docker-menu-service/target
+/cloud-docker-parent/cloud-docker-redis-service/target
+/cloud-docker-parent/cloud-docker-resource-service/target
+/cloud-docker-parent/cloud-docker-user-service/target
+/cloud-docker-parent/cloud-docker-zipkin-server/target
+/cloud-docker-parent/cloud-docker-zuul/target

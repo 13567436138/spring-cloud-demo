@@ -22,6 +22,16 @@
   <modules>
   	<module>cloud-docker-front-end</module>
   	<module>cloud-docker-admin-server</module>
+  	<module>cloud-docker-common</module>
+  	<module>cloud-docker-config</module>
+  	<module>cloud-docker-eureka</module>
+  	<module>cloud-docker-hystrix-turbine</module>
+  	<module>cloud-docker-menu-service</module>
+  	<module>cloud-docker-redis-service</module>
+  	<module>cloud-docker-resource-service</module>
+  	<module>cloud-docker-user-service</module>
+  	<module>cloud-docker-zipkin-server</module>
+  	<module>cloud-docker-zuul</module>
   </modules>
   <dependencyManagement>
   	<dependencies>
