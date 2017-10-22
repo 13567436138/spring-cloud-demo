@@ -21,9 +21,22 @@
   </properties>
   <modules>
   	<module>cloud-docker-front-end</module>
+  	<module>cloud-docker-admin-server</module>
   </modules>
   <dependencyManagement>
   	<dependencies>
+  		<!-- https://mvnrepository.com/artifact/de.codecentric/spring-boot-admin-server-ui -->
+		<dependency>
+		    <groupId>de.codecentric</groupId>
+		    <artifactId>spring-boot-admin-server-ui</artifactId>
+		    <version>1.5.4</version>
+		</dependency>
+  	
+  		<dependency>
+		    <groupId>de.codecentric</groupId>
+		    <artifactId>spring-boot-admin-server</artifactId>
+		    <version>1.5.4</version>
+		</dependency>
   		<!-- https://mvnrepository.com/artifact/com.alibaba/druid-spring-boot-starter -->
 		<dependency>
 		    <groupId>com.alibaba</groupId>
