@@ -139,6 +139,9 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>1.5.7.RELEASE</version>
+                <configuration>
+                	<mainClass>com.mark.demo.Application</mainClass>
+                </configuration>
                 <executions>
                     <execution>
                         <goals>
@@ -191,7 +194,45 @@
          </executions>  
   
          </plugin>  
-         
+         <plugin>
+         	<groupId>org.apache.maven.plugins</groupId>  
+         	<artifactId>maven-jar-plugin</artifactId> 
+         	<version>2.6</version>
+         	<configuration>
+         		<archive>  
+         			<manifest>
+         				<addClasspath>true</addClasspath>
+         				<classpathPrefix>lib/</classpathPrefix>
+         				<mainClass>com.mark.demo.Application</mainClass>
+         			</manifest>
+         		</archive>
+         	</configuration>
+         </plugin>
+         <plugin>  
+                <groupId>org.apache.maven.plugins</groupId>  
+                <artifactId>maven-assembly-plugin</artifactId>  
+                <version>2.2</version>  
+                <configuration>  
+                    <appendAssemblyId>false</appendAssemblyId>  
+                    <descriptorRefs>  
+                        <descriptorRef>jar-with-dependencies</descriptorRef>  
+                    </descriptorRefs>  
+                    <archive>  
+                        <manifest>  
+                            <mainClass>com.mark.demo.Application</mainClass>  
+                        </manifest>  
+                    </archive>  
+                </configuration>  
+                <executions>  
+                    <execution>  
+                        <id>make-assembly</id>  
+                        <phase>package</phase>  
+                        <goals>  
+                            <goal>assembly</goal>  
+                        </goals>  
+                    </execution>  
+                </executions>  
+            </plugin>  
          <plugin>
              <groupId>com.spotify</groupId>
              <artifactId>docker-maven-plugin</artifactId>

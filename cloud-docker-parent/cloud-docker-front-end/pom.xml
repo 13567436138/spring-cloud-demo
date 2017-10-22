@@ -123,6 +123,10 @@
              <groupId>com.spotify</groupId>
              <artifactId>docker-maven-plugin</artifactId>
          </plugin>
+         <plugin>
+         	<groupId>org.apache.maven.plugins</groupId>  
+         	<artifactId>maven-jar-plugin</artifactId> 
+         </plugin>
     </plugins>
   </build>
 </project>
