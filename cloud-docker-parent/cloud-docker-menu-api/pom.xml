@@ -18,6 +18,10 @@
   </properties>
 
   <dependencies>
+  	<dependency>
+  		<groupId>com.mark.demo</groupId>
+  		<artifactId>cloud-docker-common</artifactId>
+  	</dependency>
   </dependencies>
   
   <build>

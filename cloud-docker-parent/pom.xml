@@ -38,6 +38,11 @@
   </modules>
   <dependencyManagement>
   	<dependencies>
+  		<dependency>
+	  		<groupId>com.mark.demo</groupId>
+	  		<artifactId>cloud-docker-common</artifactId>
+	  		<version>${project.version}</version>
+	  	</dependency>
   		<!-- https://mvnrepository.com/artifact/de.codecentric/spring-boot-admin-server-ui -->
 		<dependency>
 		    <groupId>de.codecentric</groupId>
