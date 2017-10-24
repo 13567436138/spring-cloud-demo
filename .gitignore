@@ -24,3 +24,7 @@
 /cloud-docker-parent/cloud-docker-resource-api/target
 /cloud-docker-parent/cloud-docker-menu-api/target
 /cloud-docker-parent/cloud-docker-user-api/target
+/cloud-docker-parent/cloud-docker-git-repo/.settings
+/cloud-docker-parent/cloud-docker-git-repo/.project
+/cloud-docker-parent/cloud-docker-git-repo/.classpath
+/cloud-docker-parent/cloud-docker-git-repo/pom.xml
