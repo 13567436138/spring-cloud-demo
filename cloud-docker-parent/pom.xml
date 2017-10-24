@@ -48,6 +48,16 @@
 	  		<artifactId>cloud-docker-menu-api</artifactId>
 	  		<version>${project.version}</version>
 	  	</dependency>
+	  	<dependency>
+	  		<groupId>com.mark.demo</groupId>
+	  		<artifactId>cloud-docker-resource-api</artifactId>
+	  		<version>${project.version}</version>
+	  	</dependency>
+	  	<dependency>
+	  		<groupId>com.mark.demo</groupId>
+	  		<artifactId>cloud-docker-user-api</artifactId>
+	  		<version>${project.version}</version>
+	  	</dependency>
   		<!-- https://mvnrepository.com/artifact/de.codecentric/spring-boot-admin-server-ui -->
 		<dependency>
 		    <groupId>de.codecentric</groupId>
