@@ -58,6 +58,13 @@
 	  		<artifactId>cloud-docker-user-api</artifactId>
 	  		<version>${project.version}</version>
 	  	</dependency>
+	  	<!-- https://mvnrepository.com/artifact/com.alibaba/druid-spring-boot-starter -->
+		<dependency>
+		    <groupId>com.alibaba</groupId>
+		    <artifactId>druid-spring-boot-starter</artifactId>
+		    <version>1.1.4</version>
+		</dependency>
+	  	
   		<!-- https://mvnrepository.com/artifact/de.codecentric/spring-boot-admin-server-ui -->
 		<dependency>
 		    <groupId>de.codecentric</groupId>
