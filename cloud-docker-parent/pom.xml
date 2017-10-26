@@ -71,6 +71,18 @@
 		    <artifactId>spring-boot-admin-server-ui</artifactId>
 		    <version>1.5.4</version>
 		</dependency>
+		
+		<dependency>
+		    <groupId>de.codecentric</groupId>
+		    <artifactId>spring-boot-admin-server-ui-login</artifactId>
+		    <version>1.5.4</version>
+		</dependency>
+  	<!-- https://mvnrepository.com/artifact/de.codecentric/spring-boot-admin-starter-client -->
+		<dependency>
+		    <groupId>de.codecentric</groupId>
+		    <artifactId>spring-boot-admin-starter-client</artifactId>
+		    <version>1.5.4</version>
+		</dependency>
   	
   		<dependency>
 		    <groupId>de.codecentric</groupId>

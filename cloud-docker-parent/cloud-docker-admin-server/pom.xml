@@ -26,6 +26,11 @@
 		    <groupId>de.codecentric</groupId>
 		    <artifactId>spring-boot-admin-server-ui</artifactId>
 		</dependency>
+  		<!-- https://mvnrepository.com/artifact/de.codecentric/spring-boot-admin-server-ui-login -->
+		<dependency>
+		    <groupId>de.codecentric</groupId>
+		    <artifactId>spring-boot-admin-server-ui-login</artifactId>
+		</dependency>
   	
   		<dependency>
 		    <groupId>de.codecentric</groupId>

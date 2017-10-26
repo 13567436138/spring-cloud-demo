@@ -18,6 +18,10 @@
   </properties>
 
   <dependencies>
+  	<dependency>  
+	    <groupId>de.codecentric</groupId>  
+	    <artifactId>spring-boot-admin-starter-client</artifactId>  
+	</dependency>
     <dependency>
   		<groupId>com.mark.demo</groupId>
   		<artifactId>cloud-docker-resource-api</artifactId>

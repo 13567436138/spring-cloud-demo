@@ -17,7 +17,11 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <dependencies>
+  <dependencies>	
+  	<dependency>  
+	    <groupId>de.codecentric</groupId>  
+	    <artifactId>spring-boot-admin-starter-client</artifactId>  
+	</dependency>
    	<dependency>
   		<groupId>com.mark.demo</groupId>
   		<artifactId>cloud-docker-menu-api</artifactId>
