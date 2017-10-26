@@ -27,7 +27,7 @@ public class FreemarkerConfig {
 	@Bean
 	public FreeMarkerConfigurer freeMarkerConfigurer() {
 		FreeMarkerConfigurer configurer = new FreeMarkerConfigurer();
-		configurer.setTemplateLoaderPaths("classpath:/templates/","/WEB-INF/ftl/");
+		configurer.setTemplateLoaderPaths("classpath:/templates/ftl/","/WEB-INF/ftl/");
 		configurer.setDefaultEncoding("UTF-8");
 		configurer.setPreferFileSystemAccess(properties.isPreferFileSystemAccess());
 		Properties settings = new Properties();
