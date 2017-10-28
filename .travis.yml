@@ -1,5 +1,11 @@
 language: java
 jdk:
   - oraclejdk8
-install: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgpg.skip=true
-script: mvn test
+before_install:  
+   - "echo skipped"  
+install:  
+  - "echo skipped" 
+#install: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgpg.skip=true
+script:
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgpg.skip=true
+  - mvn test
