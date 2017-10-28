@@ -301,4 +301,21 @@
      </plugins>
 	</pluginManagement>
 </build>
+
+<repositories>
+	<repository>
+		<id>center</id>
+		<url>http://central.maven.org/maven2/</url>
+		<releases>
+			<enabled>true</enabled>
+		</releases>
+	</repository>
+	<repository>
+		<id>jahia</id>
+		<url>http://maven.jahia.org/maven2/</url>
+		<releases>
+			<enabled>true</enabled>
+		</releases>
+	</repository>
+</repositories>
 </project>
