@@ -9,3 +9,9 @@ install:
 script:
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgpg.skip=true
   - mvn test
+notifications:  
+  email:  
+    recipients:  
+      - 195446040@qq.com
+    on_success: always 
+    on_failure: always
