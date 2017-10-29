@@ -58,6 +58,11 @@
 		<plugin>
              <groupId>com.spotify</groupId>
              <artifactId>docker-maven-plugin</artifactId>
+             <configuration>
+             	<imageTags>
+             		<imageTag>0.0.1</imageTag>
+             	</imageTags>
+             </configuration>
          </plugin>
     </plugins>
   </build>
