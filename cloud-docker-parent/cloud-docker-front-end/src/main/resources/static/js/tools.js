@@ -17,7 +17,7 @@ function setCsrfToken(formId) {
 $(function(){
 	
 	var path=document.getElementById("base").href;
-	$.post(path+"/menu/getMenuTopLever",{}, function(data) {
+	$.get(path+"/menu/getMenuTopLever",{}, function(data) {
 		dataTree=convertJson(data);
 		if(dataTree.code==403){
 			document.location=path+"/common/login"
@@ -43,7 +43,7 @@ function InitLeftMenu(dataTree) {
 	$("#nav" ).accordion();
     $.each(dataTree, function(i, n) {
     	$.ajax({
-    		  type: 'POST',
+    		  type: 'GET',
     		  url: path+"/menu/getMenuChildren",
     		  data: {pid:n.id},
     		  dataType: "json",

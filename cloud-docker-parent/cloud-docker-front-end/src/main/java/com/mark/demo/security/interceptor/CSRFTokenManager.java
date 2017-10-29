@@ -38,7 +38,7 @@ public final class CSRFTokenManager
             {
                 token = IdGen.uuid();
                 LOGGER.info("查找不到 csrf token, 重新生成; token:" + token);
-                redisSessionManager.put(request, RedisSessionManager.SessionKey.CSRF_KEY, token);
+                redisSessionManager.putString(request, RedisSessionManager.SessionKey.CSRF_KEY, token,RedisSessionManager.defaultExpireSeconds);
             }
         }
         return token;

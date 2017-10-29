@@ -16,6 +16,7 @@ import org.springframework.security.web.authentication.LoginUrlAuthenticationEnt
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import com.mark.demo.security.interceptor.CSRFRequestDataValueProcessor;
 import com.mark.demo.security.security.CustomAccessDecisionManager;
 import com.mark.demo.security.security.CustomFilterSecurityInterceptor;
 import com.mark.demo.security.security.CustomLogoutSuccessHandler;
@@ -62,6 +63,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	        .anyRequest().authenticated() 
 	        .antMatchers("/admins/**").hasAuthority("ROLE_ADMIN")
 	        .and()  
+	        .csrf().disable()
 	        .formLogin()  
 	        .loginPage("/common/login")
 	        .usernameParameter("userName").passwordParameter("password")  
@@ -71,7 +73,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	        .permitAll()  
 	        .successHandler(customSavedRequestAwareAuthenticationSuccessHandler)
 	        .and()
-	        .csrf().disable() 
 	        .logout()  
 	        .logoutSuccessUrl("/logout")
 	        .logoutSuccessHandler(customLogoutSuccessHandler)
@@ -124,6 +125,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return authenticationManager;
     } 
 
-	
+	@Bean
+	public CSRFRequestDataValueProcessor csrfRequestDataValueProcessor(){
+		return new CSRFRequestDataValueProcessor();
+	}
 	
 }

@@ -15,7 +15,7 @@ public class RedisSessionManager
 {
     public static final Logger   logger               = LoggerFactory.getLogger(RedisSessionManager.class);
     
-    private static final Integer defaultExpireSeconds = 60 * 30;                                           // 30分钟
+    public static final Integer defaultExpireSeconds = 60 * 30;                                           // 30分钟
     
     private CommonRedisFeignService redisFeignService;
     

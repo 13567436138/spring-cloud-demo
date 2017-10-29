@@ -1,4 +1,5 @@
 <#assign base=request.contextPath />
+<#assign form=JspTaglibs["http://www.springframework.org/tags/form"]> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" " http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http:/www.w3.org/1999/xhtml">  
 <head>  
@@ -13,6 +14,7 @@
 <script type="text/javascript" src="${base}/js/jquery-easyui-1.5/locale/easyui-lang-zh_CN.js"></script>  
 </head>  
 <body > 
+	<@form.form id="_csrf-form" cssStyle="display: none"/>
 	<div id="loginWin" class="easyui-window" title="登录" style="width:500px;height:228px;padding:5px;"  
    			minimizable="false" maximizable="false" resizable="false" collapsible="false">  
     	<div class="easyui-layout" fit="true">  
