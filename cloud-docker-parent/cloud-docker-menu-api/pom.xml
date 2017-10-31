@@ -6,7 +6,7 @@
   	<groupId>com.mark.demo</groupId>
   	<artifactId>cloud-docker-parent</artifactId>
   	<version>0.0.1-SNAPSHOT</version>
-	<relativePath>../cloud-docker-parent</relativePath>
+	<relativePath>../cloud-docker-parent/pom.xml</relativePath>
   </parent>
   <artifactId>cloud-docker-menu-api</artifactId>
   <packaging>jar</packaging>
