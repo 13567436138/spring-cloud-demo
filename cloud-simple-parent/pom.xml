@@ -272,12 +272,12 @@
   	<repository>
   		<id>nexus-releases</id>
   		<name>Releases name</name>
-  		<url>http://192.168.1.12:4444/repository/mark-group/</url>
+  		<url>http://192.168.1.12:4444/repository/mark/</url>
   	</repository>
   	<snapshotRepository>
   		<id>nexus-snapshots</id>
   		<name>snapshots name</name>
-  		<url>http://192.168.1.12:4444/repository/mark-group/</url>
+  		<url>http://192.168.1.12:4444/repository/mark/</url>
   	</snapshotRepository>
   </distributionManagement>
 </project>
